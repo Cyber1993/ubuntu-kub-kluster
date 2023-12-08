@@ -95,7 +95,10 @@ kubeadm join 10.7.12.200:6443 --token ebjgdn.7i07qlevqvh2seyt \
 
 
 
-
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/tigera-operator.yaml
+curl https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/custom-resources.yaml -O
+sed -i 's/cidr: 192\.168\.0\.0\/16/cidr: 10.10.0.0\/16/g' custom-resources.yaml
+kubectl create -f custom-resources.yaml
 
 
 
