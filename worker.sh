@@ -20,6 +20,11 @@ network:
 
   netplan apply
 +++++++++++++++++++++++++++
+
+
+echo "10.7.12.200 master-node
+10.7.12.201 worker-node1" >> /etc/hosts
+
 sudo nano /etc/hosts
 
 10.7.12.200 master-node
