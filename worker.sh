@@ -7,6 +7,18 @@ sudo sed -i '/ swap / s/^/#/' /etc/fstab
 sudo hostnamectl set-hostname "worker-node1"
 exec bash
 +++++++++++++++++++++++++++++
+echo "network:
+  ethernets:
+    enp0s3:
+      addresses:
+      - 10.7.135.15/16
+      gateway4: 10.7.0.101
+      nameservers:
+        addresses:
+        - 10.7.0.101
+  version: 2" > /etc/netplan/00-installer-config.yaml 
+
+
 network:
   ethernets:
     enp0s3:
